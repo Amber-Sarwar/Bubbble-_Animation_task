@@ -1,0 +1,41 @@
+  body {
+    margin: 0;
+    background: linear-gradient(to top, #00111a, #00334d);
+    overflow: hidden;
+    background-color: #00334d;
+  }
+
+  #bubble-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .bubble {
+    position: absolute;
+    bottom: -60px;
+    border-radius: 50%;
+    animation: rise var(--dur) linear forwards;
+    pointer-events: auto; 
+
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.05) 60%, transparent 80%),
+      radial-gradient(circle at 70% 70%, rgba(255,255,255,0.2), transparent 60%);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow:
+      inset -8px -8px 15px rgba(255,255,255,0.2),
+      inset 8px 8px 15px rgba(0,0,0,0.15);
+    filter: hue-rotate(var(--hue)) saturate(1.2);
+    mix-blend-mode: screen;
+    opacity: var(--opacity);
+  }
+
+  .bubble:hover {
+    animation-play-state: paused; 
+  }
+
+  @keyframes rise {
+    to {
+      transform: translateY(-110vh) translateX(var(--drift));
+    }
+  }
