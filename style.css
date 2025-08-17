@@ -32,10 +32,12 @@
 
   .bubble:hover {
     animation-play-state: paused; 
+    background: rgba(255, 85, 85, 0.856);
   }
 
   @keyframes rise {
     to {
       transform: translateY(-110vh) translateX(var(--drift));
     }
+
   }
